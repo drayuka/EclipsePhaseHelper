@@ -1,2 +1,2 @@
 # EclipsePhaseHelper
-Project to make running &lt;a href="http://www.eclipsephase.com/">Eclipse Phase&lt;/a> easier
+Project to make running [Eclipse Phase](http://www.eclipsephase.com/) easier
