@@ -17,17 +17,22 @@
   },
   "homepage": "https://github.com/drayuka/EclipsePhaseHelper#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.116",
     "@types/node": "^9.6.2",
     "@types/react": "^16.4.9",
+    "@types/react-dom": "^16.0.7",
     "aws-sdk": "^2.290.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "typescript": "^2.8.1"
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
-    "grunt-aws-sdk": "^0.5.0"
+    "awesome-typescript-loader": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.22.1",
+    "typescript": "^2.9.2",
+    "webpack-cli": "^3.1.0"
   }
 }

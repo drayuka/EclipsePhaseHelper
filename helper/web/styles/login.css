@@ -1,0 +1,10 @@
+.loginPrompt {
+    top: 50%;
+    width: 30%;
+    transform: translateY(-50%);
+    justify-content: center;
+}
+
+.loginEntry {
+    padding:10px;
+}

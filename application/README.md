@@ -1,1 +1,0 @@
-This directory and sub-directories contain a logical grouping of AWS lambda function code to be used to run the serverless application
