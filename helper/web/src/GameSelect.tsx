@@ -26,7 +26,7 @@ export class GameSelect extends React.Component {
                 players: ['blake','trevor','colby'],
                 name: 'The Game'
             }
-        ]
+        ];
         var GameList : any[] = [];
         _.forEach(games, function (game: Game) {
             GameList.push(
@@ -36,7 +36,7 @@ export class GameSelect extends React.Component {
                     </div>
                 </div>
             )
-        })
+        });
         return (
             <div></div>
         );

@@ -17,7 +17,7 @@ export class Login extends React.Component {
                         <input type='password' className='loginEntry' id='password' onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handlePasswordChange.bind(this)}/>
                     </div>
                 </div>
-                <div className='loginButton'>
+                <div className='loginButton' onSubmit={this.login.bind(this)}>
                     Login
                 </div>
             </div>;
@@ -36,6 +36,9 @@ export class Login extends React.Component {
             username: '',
             password: '',
         }
+    }
+    login(e: React.FormEvent<HTMLFormElement>) {
+        
     }
     handleKeyPress(e: KeyboardEvent) {
         var self = this;
