@@ -17,14 +17,13 @@ export class Login extends React.Component {
                         <input type='password' className='loginEntry' id='password' onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handlePasswordChange.bind(this)}/>
                     </div>
                 </div>
-                <div className='loginButton' onSubmit={this.login.bind(this)}>
+                <div className='loginButton button' onSubmit={this.handleKeyPress.bind(this)}>
                     Login
                 </div>
             </div>;
     }
     props: {
-        onChangeStatus: (newState: appStatus) => void,
-        setUser: (username: string) => void
+        onLogin: (newState: appStatus, username: string, token: string) => void,
     }
     state: {
         username: string,
@@ -37,16 +36,12 @@ export class Login extends React.Component {
             password: '',
         }
     }
-    login(e: React.FormEvent<HTMLFormElement>) {
-        
-    }
     handleKeyPress(e: KeyboardEvent) {
         var self = this;
         if(e.key == 'Enter') {
             console.log('attempted login with ' + this.state.username + ' and ' + this.state.password);
             //TODO: VERIFY UN/PW
-            this.props.setUser(this.state.username);
-            this.props.onChangeStatus('gameSelect');
+            this.props.onLogin('gameSelect', this.state.username, 'tempToken');
         }
     }
     handleUsernameChange(e: React.ChangeEvent) {
