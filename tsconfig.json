@@ -3,7 +3,10 @@
         "allowJs": false,
         "module": "commonjs",
         "target": "es6",
-        "lib": ["es2015"],
+        "lib": [
+            "es2016",
+            "dom"
+        ],
         "noImplicitAny": true,
         "sourceMap": false,
         "noEmitOnError": true,

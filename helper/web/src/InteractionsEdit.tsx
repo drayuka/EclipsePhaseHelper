@@ -3,7 +3,10 @@ import {appStatus} from './AppRoot';
 
 export class InteractionsEdit extends React.Component {
     render () {
-        return <div></div>
+        var self = this;
+        return <div>
+            
+        </div>
     }
     props: {
         gameid: string,
