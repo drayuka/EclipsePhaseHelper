@@ -22,8 +22,7 @@ export class MainNavigation extends React.Component {
     }
     props: {
         onEditRules: (gameid: string) => void
-        username: string,
-        token: string
+        username: string
     }
     editRules (e: React.FormEvent, gameid: string) {
         this.props.onEditRules(gameid);

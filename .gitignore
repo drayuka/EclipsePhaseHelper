@@ -2,3 +2,7 @@
 /helper/web/dist
 **.vscode
 /helper/app/dist
+/helper/app/server.cert
+/helper/app/server.key
+/helper/web/base/bundle.js
+/helper/web/base/bundle.js.map

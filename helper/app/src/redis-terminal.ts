@@ -13,14 +13,6 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-client.add_command("json.set");
-
-client.add_command("json.get");
-interface RedisClient {
-    json_get: (key: string, path: string ) => string
-    json_set: (key: string, path: string, value: string) => string,
-}
-
 rl.on('line', (input) => {
     let commands = input.split(' ');
     let commandName = commands.shift();
