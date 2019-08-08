@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {AppRoot} from "./AppRoot";
+import {AppRoot} from "./root";
 import '../styles/base.css';
 
 ReactDOM.render(

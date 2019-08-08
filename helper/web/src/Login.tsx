@@ -1,26 +1,26 @@
 import * as React from 'react';
-import {appStatus} from './AppRoot';
+import {appStatus} from './root';
 
 export class Login extends React.Component {
     render () {
         return <div className='loginPrompt'>
+            <div>
+            Hello, please Login:
+            </div>
+            <div className='loginBlock'>
                 <div>
-                Hello, please Login:
+                    username:
+                    <input type='text' className='loginEntry' id='username' onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handleUsernameChange.bind(this)}/>
                 </div>
-                <div className='loginBlock'>
-                    <div>
-                        username:
-                        <input type='text' className='loginEntry' id='username' onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handleUsernameChange.bind(this)}/>
-                    </div>
-                    <div> 
-                        password:   
-                        <input type='password' className='loginEntry' id='password' onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handlePasswordChange.bind(this)}/>
-                    </div>
+                <div> 
+                    password:   
+                    <input type='password' className='loginEntry' id='password' onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handlePasswordChange.bind(this)}/>
                 </div>
-                <div className='loginButton button' onSubmit={this.handleKeyPress.bind(this)}>
-                    Login
-                </div>
-            </div>;
+            </div>
+            <div className='loginButton button' onSubmit={this.handleKeyPress.bind(this)}>
+                Login
+            </div>
+        </div>;
     }
     props: {
         onLogin: (newState: appStatus, username: string, token: string) => void,
