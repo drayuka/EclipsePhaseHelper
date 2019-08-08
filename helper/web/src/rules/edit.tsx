@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {appStatus} from './AppRoot';
+import {appStatus} from '../root';
 
-export class InteractionsEdit extends React.Component {
+export class RuleSetsEdit extends React.Component {
     render () {
         var self = this;
         return <div>

@@ -1,19 +1,17 @@
 import * as React from "react";
 import '../styles/login.css';
-import {Login} from './Login';
-import {MainNavigation} from './MainNavigation';
-import {InteractionsEdit} from './InteractionsEdit';
-import {Signup} from './Signup';
-import {NavBar} from './NavBar';
+import {Login} from './login';
+import {GamesList} from './games/list';
+import {RuleSetsEdit} from './rules/edit';
+import {Signup} from './signup';
+import {NavBar} from './navigation';
 
 export type appStatus =
     'signup' |
     'login' | 
-    'gameSelect' |
     'play' |
-    'log' |
-    'interactions' |
-    'entities';
+    'gameSelect' |
+    'ruleset';
 
 export class AppRoot extends React.Component {
     constructor(props: any) {
@@ -31,9 +29,9 @@ export class AppRoot extends React.Component {
         token: string | undefined,
         gameid: string | undefined
     };
-    changeState (newState: appStatus) {
+    changeStatus (status: appStatus) {
         this.setState({
-            status: newState
+            status: status
         })
     }
     onLogin (newState: appStatus, username: string) {
@@ -74,16 +72,16 @@ export class AppRoot extends React.Component {
                 <Login onLogin={this.onLogin.bind(this)}/>
         } else if (this.state.status == 'signup') {
             current = 
-                <Signup onSignup={this.onSignup.bind(this)}/>
+                <Signup />
         }else if((this.state.status == 'gameSelect' || !gameid) && username) {
             current = 
-                <MainNavigation onEditRules={this.onEditRules.bind(this)}
+                <GamesList onPlayGame={this.onEditRules.bind(this)}
                             username={username}
                             />
-        } else if(this.state.status == 'interactions' && gameid) {
+        } else if(this.state.status == 'ruleset' && gameid) {
             current = 
-                <InteractionsEdit gameid={gameid}
-                                    onFinish={this.changeState}/>
+                <RuleSetsEdit gameid={gameid}
+                                    onFinish={this.changeStatus}/>
         }
         return <div>
             <NavBar username={username} onNav={this.onNav.bind(this)}></NavBar>
