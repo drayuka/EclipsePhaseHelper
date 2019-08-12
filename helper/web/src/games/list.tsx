@@ -2,7 +2,7 @@ import * as React from "react";
 import {appStatus} from "../root";
 import {SelectedGame} from './selected';
 import * as _ from "lodash";
-import '../styles/gameSelect.css';
+import '../../styles/gameSelect.css';
 import { any } from "prop-types";
 import { Game } from '../../../univ/types';
 

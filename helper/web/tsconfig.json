@@ -2,7 +2,7 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
       "outDir": "./dist",
-      "rootDir": "./src",
+      "rootDir": "../../helper",
       "jsx": "react",
       "target": "es6",
       "lib": [
@@ -11,6 +11,10 @@
       ]
     },
     "include": [
-        "./src/*"
+        "./src/*", 
+        "../univ/types/index.ts",
+        "./styles/*",
+        "./base/*",
+        "./assets/*",
     ]
 }
