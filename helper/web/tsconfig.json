@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": "../../helper",
+      "jsx": "react",
+      "target": "es2017",
+      "lib": [
+          "dom",
+          "es2017"
+      ]
+    },
+    "include": [
+        "./src/*", 
+        "../univ/types/index.ts",
+        "./styles/*",
+        "./base/*",
+        "./assets/*",
+    ]
+}

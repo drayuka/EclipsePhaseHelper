@@ -29,7 +29,7 @@ Even given these downsides, I set off to create this application so that I could
 * typescript for type checking
 * redis for data storage and pub/sub
 * webpack for bundling
-* (nominally) totaljs backend
+* express.js backend
 
 
 ## Future possible features

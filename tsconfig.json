@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "module": "commonjs",
+        "target": "es2017",
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "noEmitOnError": true,
+        "allowUnreachableCode": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictPropertyInitialization": false
+    },
+    "include": [
+        "./node_modules/@types/**/*.d.ts"
+    ]
+}
