@@ -68,8 +68,12 @@ export class AppRoot extends React.Component {
         let current;
 
         if(this.state.status == 'login' || !username) {
-            current = 
-                <Login onLogin={this.onLogin.bind(this)}/>
+            //no header or footer if you are logging in
+            return <div>
+                <div className="container-fluid main">
+                    <Login onLogin={this.onLogin.bind(this)}/>
+                </div>
+            </div>
         } else if (this.state.status == 'signup') {
             current = 
                 <Signup />
