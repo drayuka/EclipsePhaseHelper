@@ -17,8 +17,8 @@ interface Ruleset {
     rules: string[],
 }
 
-var fakeGames : Game[] = [
-    {
+var fakeGames : {[key: string]: Game} = {
+    '1': {
         id: '1',
         owner: 'shockfist',
         players: ['blake','trevor','colby'],
@@ -31,7 +31,7 @@ var fakeGames : Game[] = [
             log: []
         }
     },
-    {
+    '2': {
         id: '2',
         owner: 'shockfist',
         players: ['blake'],
@@ -44,7 +44,7 @@ var fakeGames : Game[] = [
             log: []
         }
     }
-];
+};
 var fakeRulesets : Ruleset[] = [
     {
         id: '1',
@@ -66,10 +66,14 @@ var fakeRulesets : Ruleset[] = [
 
 export class GamesList extends React.Component {
     state: {
-        selectedGame: Game
+        selectedGame?: Game
     }
     constructor(props: any) {
         super(props);
+        let self = this;
+        self.state = {
+            selectedGame: undefined
+        };
     }
     props: {
         onPlayGame: (gameid: string) => void
@@ -87,10 +91,10 @@ export class GamesList extends React.Component {
 
         var gameList : any[] = [];
         var rulesetList : any[] = [];
-        fakeGames.forEach(function (game: Game) {
+        Object.values(fakeGames).forEach(function (game: Game) {
             let players = game.players.join(' ');
             gameList.push(
-                <div className='game-item' data-gameid={game.id} key={game.id} onClick={self.playGame.bind(self, game)}>
+                <div className='game-item' data-gameid={game.id} key={game.id} onClick={self.gameSelect.bind(self, game)}>
                     <dt className='game-name'>
                         {game.name}
                     </dt>
@@ -105,9 +109,15 @@ export class GamesList extends React.Component {
                 </div>
             );
         });
+        let selectedPane = <div className='col-8'>
+            Select a game on the left
+        </div>
+        if(self.state.selectedGame) {
+            selectedPane = <SelectedGame game={self.state.selectedGame} playGame={self.playGame.bind(self)}></SelectedGame>
+        }
         return (
             <div className='main'>    
-                <div className='leftNav'>
+                <div className='col-4'>
                     <div className='leftNavOptions'>
                         <div className='createNewGame button'>
                             Create New Game
@@ -118,7 +128,7 @@ export class GamesList extends React.Component {
                     </div>        
                     <div className='leftNavList'>{gameList}</div>
                 </div>
-                <SelectedGame game={self.state.selectedGame}></SelectedGame>
+                {selectedPane}
             </div>
         );
     }
