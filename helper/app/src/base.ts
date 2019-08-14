@@ -24,7 +24,7 @@ setupStaticContent(app);
 
 app.get('/', (req, res) => {
     let options = {
-        root: '../../web/'
+        root: __dirname + '/../../../helper/web/'
     };
     res.sendFile('base/main.html', options);
 });

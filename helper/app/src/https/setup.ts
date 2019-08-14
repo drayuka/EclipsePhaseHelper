@@ -4,8 +4,8 @@ import { Application } from 'express';
 
 export function setupHTTPS(app: Application, port: number) {
     https.createServer({
-        key: fs.readFileSync('../server.key'),
-        cert: fs.readFileSync('../server.cert')
+        key: fs.readFileSync(__dirname + '/../../server.key'),
+        cert: fs.readFileSync(__dirname + '/../../server.cert')
     }, app)
     .listen(port, function () {
         console.log(`Example app listening on ${port}! Go to https://localhost:${port}/`)

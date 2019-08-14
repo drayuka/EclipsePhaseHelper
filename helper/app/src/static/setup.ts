@@ -12,6 +12,6 @@ export function setupStaticContent(app: Application) {
         extensions: ['js','htm','html']
     }
     
-    app.use('/static', express.static('../../../node_modules/',nodePackageOptions));
-    app.use('/static', express.static('../../web/base/',clientAppOptions));
+    app.use('/static', express.static(__dirname + '/../../../../node_modules/',nodePackageOptions));
+    app.use('/static', express.static(__dirname + '/../../../../helper/web/base/',clientAppOptions));
 }
