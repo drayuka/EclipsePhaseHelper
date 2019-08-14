@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Game } from '../../../../univ/types';
+import { Game } from '../../../univ/types';
 
 export class LogDisplay extends React.Component {
     constructor(props: any) {
@@ -7,5 +7,8 @@ export class LogDisplay extends React.Component {
     }
     props: {
         game: Game
+    }
+    render () {
+        return <div></div>
     }
 }
