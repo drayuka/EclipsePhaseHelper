@@ -20,3 +20,13 @@ export interface Action {
     },
     description: string
 }
+
+
+export interface Ruleset {
+    id: string,
+    owner: string,
+    name: string,
+    custom: boolean,
+    creator: string,
+    rules: string[],
+}
