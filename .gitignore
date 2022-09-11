@@ -1,8 +1,8 @@
 **/node_modules
-/helper/web/dist
+/web/dist
 **.vscode
-/helper/app/dist
-/helper/app/server.cert
-/helper/app/server.key
-/helper/web/base/bundle.js
-/helper/web/base/bundle.js.map
+/app/dist
+/app/server.cert
+/app/server.key
+/web/base/bundle.js
+/web/base/bundle.js.map
